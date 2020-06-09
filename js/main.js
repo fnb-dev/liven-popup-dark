@@ -3,7 +3,7 @@
         var popupWrapper = $('#popup-wrap');
         var popUp = $('#pop-up');
         
-        $(".popup-close, .drag-btn").click(function(e){
+        $(".popup-close").click(function(e){
             e.preventDefault();
             
             TweenMax.to(popupWrapper, 0.5, {
@@ -18,16 +18,14 @@
                 delay: .5,
                 ease: Sine.easeOut,
                 onComplete:function(){
-                    popUp.css({
-                        visibility: 'hidden'
-                    })
+                    popUp.hide();
                 }
             });
         });
-        
-        
-        
-        /*$('#popup-inner').draggable({
+                        
+        $('#popup-wrap').draggable({
+            handle: ".drag-btn",
+            axis: "y",
             revert: true,
             drag: function (e, ui) {
                 
@@ -41,16 +39,15 @@
                 TweenMax.to(popUp, .8, {
                     css: {
                         opacity: 0,
-                        visibility: 'hidden'
                     },
                     delay: .5,
-                    ease: Sine.easeOut
+                    ease: Sine.easeOut,
+                    onComplete:function(){
+                        popUp.hide();
+                    }
                 });
                 return !e;
             }
-        });*/
-
-
-
+        });
     });
 })(jQuery);
