@@ -47,8 +47,10 @@ body {
     font-family: 'sf_pro_displayregular';
     font-weight: normal;
     min-height: 100%;
-    background-image: url(../img/popup-img.jpg);
+    background-image: url(../img/popup-bg.png);
     background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .main {
